@@ -3,11 +3,11 @@ output "platform_vpc_id" {
 }
 
 output "public_subnet_ids" {
-  value = ["${coalescelist(var.public_subnet_ids, aws_subnet.public.*.id)}"]
+  value = coalescelist(var.public_subnet_ids, aws_subnet.public.*.id)
 }
 
 output "private_subnet_ids" {
-  value = ["${coalescelist(var.private_subnet_ids, aws_subnet.private.*.id)}"]
+  value = coalescelist(var.private_subnet_ids, aws_subnet.private.*.id)
 }
 
 output "nat_gateway_public_ip" {
