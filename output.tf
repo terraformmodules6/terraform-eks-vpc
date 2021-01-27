@@ -1,5 +1,5 @@
 output "platform_vpc_id" {
-  value = "${coalesce(var.vpc_id, join("",aws_vpc.platform.*.id))}"
+  value = coalesce(var.vpc_id, join("",aws_vpc.platform.*.id))
 }
 
 output "public_subnet_ids" {
@@ -11,5 +11,5 @@ output "private_subnet_ids" {
 }
 
 output "nat_gateway_public_ip" {
-  value = "${aws_eip.private_gw.*.public_ip}"
+  value = aws_eip.private_gw.*.public_ip
 }

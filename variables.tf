@@ -1,5 +1,5 @@
 variable "platform_name" {
-  type = "string"
+  type = string
 }
 
 variable vpc_id {
@@ -9,29 +9,29 @@ variable vpc_id {
 
 variable private_subnet_ids {
   description = "Private subnet IDs if you would like to use existing. Routing table won't be created."
-  type        = "list"
+  type        = list
   default     = []
 }
 
 variable public_subnet_ids {
   description = "Public subnet IDs if you would like to use existing. Routing table won't be created."
-  type        = "list"
+  type        = list
   default     = []
 }
 
 variable "platform_cidr" {
-  type = "string"
+  type = string
 }
 
 variable "private_cidrs" {
-  type = "list"
+  type = list
 }
 
 variable "public_cidrs" {
-  type = "list"
+  type = list
 }
 
 variable "tags" {
-  type        = "map"
+  type        = map
   description = "A map of tags to add to all resources."
 }
