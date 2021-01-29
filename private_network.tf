@@ -49,7 +49,7 @@ resource "aws_route" "private_internet" {
   route_table_id         = aws_route_table.private[0].id
   destination_cidr_block = "0.0.0.0/0"
   nat_gateway_id         = aws_nat_gateway.private_gw[0].id
-  depends_on             = ["aws_route_table.private"]
+  depends_on             = [aws_route_table.private]
 }
 
 resource "aws_route_table_association" "private" {
